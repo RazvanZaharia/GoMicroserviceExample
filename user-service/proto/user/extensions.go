@@ -3,13 +3,15 @@ package go_micro_srv_user
 import (
 	"github.com/jinzhu/gorm"
 	"github.com/satori/go.uuid"
-	"log"
+	"fmt"
 )
 
 func (model *User) BeforeCreate(scope *gorm.Scope) error {
-	uuid, error := uuid.NewV4()
-	if error != nil {
-		log.Println(error)
+	uuid1, err := uuid.NewV4()
+	if err != nil {
+		fmt.Printf("Something went wrong: %s", err)
+		return nil
 	}
-	return scope.SetColumn("Id", uuid.String())
+
+	return scope.SetColumn("Id", uuid1.String())
 }
