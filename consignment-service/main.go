@@ -8,7 +8,9 @@ import (
 	"log"
 
 	pb "GoMicroserviceExample/consignment-service/proto/consignment"
-	vesselProto "GoMicroserviceExample/vessel-service/proto/vessel"
+	//in order to run $ dep ensure or $ go get, you will need to ensure you have your code pushed up to Git,
+	// so that it can pull in the vessel-service
+	vesselProto "github.com/RazvanZaharia/GoMicroserviceExample/vessel-service/proto/vessel"
 	"github.com/micro/go-micro"
 	"golang.org/x/net/context"
 )
