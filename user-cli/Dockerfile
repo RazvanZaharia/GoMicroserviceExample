@@ -18,4 +18,6 @@ WORKDIR /app
 
 COPY --from=builder /go/src/GoMicroserviceExample/user-cli/user-cli .
 
+ENTRYPOINT ["./user-cli"]
+
 CMD ["./user-cli"]
